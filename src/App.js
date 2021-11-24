@@ -1,9 +1,11 @@
+import Header from './components/header/header.component'
+
 import './App.css'
 
 function App() {
   return (
     <div className="App">
-      ReactJS Boilerplate
+      <Header />
     </div>
   )
 }
