@@ -10,7 +10,13 @@ const FormOverview = () => {
   const forms = useContext(FormsContext)
 
   return (
-    <Box display="grid" gridTemplateColumns="repeat(auto-fit, 40rem)" gap={2}>
+    <Box
+      margin="3.2rem auto"
+      display="grid"
+      gridTemplateColumns="repeat(auto-fit, 40rem)"
+      gap={2}
+      justifyContent="center"
+    >
       {forms.map(({ formName, description, ...otherProps }, index) => (
         <FormPreview key={index} title={formName} detail={description} {...otherProps} />
       ))}
