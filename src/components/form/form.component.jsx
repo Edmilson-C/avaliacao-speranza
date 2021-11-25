@@ -66,8 +66,13 @@ const Form = () => {
           if (renderAs) {
             return (
               <>
-                <FormControl component="fieldset" sx={{ marginTop: '1.6rem', alignSelf: 'flex-start' }}>
-                  <FormLabel component="legend" sx={{ fontSize: '1.6rem' }}>{label}</FormLabel>
+                <FormControl
+                  component="fieldset"
+                  sx={{ marginTop: '1.6rem', alignSelf: 'flex-start' }}
+                >
+                  <FormLabel component="legend" sx={{ fontSize: '1.6rem' }}>
+                    {label}
+                  </FormLabel>
                   {renderAs === 'checkbox' ? (
                     <FormGroup row>
                       {optionSet.options.map((option) => (
@@ -140,7 +145,9 @@ const Form = () => {
           )
         }
 
-        return <TextField label={label} row={4} multiline sx={{ marginTop: '1.6rem', width: '100%' }} />
+        return (
+          <TextField label={label} row={4} multiline sx={{ marginTop: '1.6rem', width: '100%' }} />
+        )
       })}
     </Box>
   )

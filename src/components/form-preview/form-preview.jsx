@@ -5,9 +5,7 @@ import {
 
 import { FormsContext } from '../../context/forms/forms.context'
 
-const FormPreview = ({
-  title, detail, position, ...otherProps
-}) => {
+const FormPreview = ({ title, detail, position }) => {
   const { showForm } = useContext(FormsContext)
 
   const changeForm = () => {
@@ -30,7 +28,15 @@ const FormPreview = ({
         <Typography sx={{ fontSize: '1.6rem', marginTop: '1rem' }}>{detail}</Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" sx={{ fontSize: '1.2rem', padding: '1rem', color: 'var(--color-black)' }} onClick={changeForm}>
+        <Button
+          size="small"
+          sx={{
+            fontSize: '1.2rem',
+            padding: '1rem',
+            color: 'var(--color-black)'
+          }}
+          onClick={changeForm}
+        >
           Ver formulário
         </Button>
       </CardActions>

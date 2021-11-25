@@ -10,7 +10,7 @@ export const FormsContext = createContext({
 
 export const FormsProvider = ({ children }) => {
   const [currentForm, setCurrentForm] = useState(-1)
-  const [form, setForm] = useState([...FORM_DATA])
+  const form = [...FORM_DATA]
 
   const showForm = (index) => {
     setCurrentForm(index)
