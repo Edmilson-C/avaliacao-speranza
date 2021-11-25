@@ -7,6 +7,9 @@
 }
 
 :root {
+  --color-primary: #303841;
+  --color-secondary: #3A4750;
+
   --color-white: #fff;
   --color-black: #000;
 }
