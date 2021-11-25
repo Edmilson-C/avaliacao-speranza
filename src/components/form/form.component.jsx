@@ -39,7 +39,17 @@ const Form = () => {
   }
 
   return (
-    <Box>
+    <Box
+      sx={{
+        marginTop: '4rem',
+        gridColumn: 'span 3',
+        width: '100%',
+        justifySelf: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center'
+      }}
+    >
       <Typography variant="h3" component="div">
         {formName}
       </Typography>
@@ -52,37 +62,40 @@ const Form = () => {
         if (optionSet) {
           if (renderAs) {
             return (
-              <FormControl component="fieldset">
-                <FormLabel component="legend">{label}</FormLabel>
-                {renderAs === 'checkbox' ? (
-                  <FormGroup row>
-                    {optionSet.options.map((option) => (
-                      <RadioCheckbox
-                        key={nanoid()}
-                        control={<Checkbox />}
-                        label={option.label}
-                        required={required}
-                      />
-                    ))}
-                  </FormGroup>
-                ) : (
-                  <RadioGroup row>
-                    {optionSet.options.map((option) => (
-                      <RadioCheckbox
-                        key={nanoid()}
-                        control={<Radio />}
-                        label={option.value}
-                        value={option.label}
-                        required={required}
-                      />
-                    ))}
-                  </RadioGroup>
-                )}
-              </FormControl>
+              <>
+                <FormControl component="fieldset" sx={{ marginTop: '1.6rem', alignSelf: 'flex-start' }}>
+                  <FormLabel component="legend">{label}</FormLabel>
+                  {renderAs === 'checkbox' ? (
+                    <FormGroup row>
+                      {optionSet.options.map((option) => (
+                        <RadioCheckbox
+                          key={nanoid()}
+                          control={<Checkbox />}
+                          label={option.label}
+                          required={required}
+                        />
+                      ))}
+                    </FormGroup>
+                  ) : (
+                    <RadioGroup row>
+                      {optionSet.options.map((option) => (
+                        <RadioCheckbox
+                          key={nanoid()}
+                          control={<Radio />}
+                          label={option.value}
+                          value={option.label}
+                          required={required}
+                        />
+                      ))}
+                    </RadioGroup>
+                  )}
+                </FormControl>
+              </>
             )
           }
+
           return (
-            <FormControl fullWidth>
+            <FormControl fullWidth sx={{ marginTop: '1.6rem' }}>
               <InputLabel id="lblRota">{label}</InputLabel>
               <Select
                 labelId="lblRota"
@@ -102,25 +115,29 @@ const Form = () => {
         }
 
         if (valueType === 'TEXT') {
-          return <TextField required label={label} />
+          return <TextField label={label} sx={{ marginTop: '1.6rem', width: '100%' }} required />
         }
 
         if (valueType === 'DATE_TIME') {
           return (
-            <TextField
-              label={label}
-              id="data"
-              value={data}
-              onChange={handleChange}
-              type="datetime-local"
-              InputLabelProps={{
-                shrink: true
-              }}
-            />
+            <>
+              <TextField
+                label={label}
+                id="data"
+                value={data}
+                onChange={handleChange}
+                type="datetime-local"
+                InputLabelProps={{
+                  shrink: true
+                }}
+                sx={{ marginTop: '1.6rem', width: '100%' }}
+                required
+              />
+            </>
           )
         }
 
-        return <TextField label={label} row={4} multiline />
+        return <TextField label={label} row={4} multiline sx={{ marginTop: '1.6rem', width: '100%' }} />
       })}
     </Box>
   )
