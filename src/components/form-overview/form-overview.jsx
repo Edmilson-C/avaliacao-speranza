@@ -3,11 +3,12 @@ import React, { useContext } from 'react'
 import { Box } from '@mui/material'
 
 import FormPreview from '../form-preview/form-preview'
+import Form from '../form/form.component'
 
-import FormsContext from '../../context/forms/forms.context'
+import { FormsContext } from '../../context/forms/forms.context'
 
 const FormOverview = () => {
-  const forms = useContext(FormsContext)
+  const { currentForm, form } = useContext(FormsContext)
 
   return (
     <Box
@@ -17,9 +18,17 @@ const FormOverview = () => {
       gap={2}
       justifyContent="center"
     >
-      {forms.map(({ formName, description, ...otherProps }, index) => (
-        <FormPreview key={index} title={formName} detail={description} {...otherProps} />
+      {form.map(({ formName, description, ...otherProps }, index) => (
+        <FormPreview
+          key={index}
+          title={formName}
+          detail={description}
+          position={index}
+          {...otherProps}
+        />
       ))}
+
+      {currentForm > -1 && <Form />}
     </Box>
   )
 }
