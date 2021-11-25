@@ -5,17 +5,12 @@ import FORM_DATA from '../../apis/form.data'
 export const FormsContext = createContext({
   currentForm: 0,
   form: [],
-  getForm: () => {},
   showForm: () => {}
 })
 
 export const FormsProvider = ({ children }) => {
   const [currentForm, setCurrentForm] = useState(-1)
-  const [form, setForm] = useState([])
-
-  const getForm = () => {
-    setForm([...FORM_DATA])
-  }
+  const [form, setForm] = useState([...FORM_DATA])
 
   const showForm = (index) => {
     setCurrentForm(index)
@@ -26,7 +21,6 @@ export const FormsProvider = ({ children }) => {
       value={{
         currentForm,
         form,
-        getForm,
         showForm
       }}
     >
