@@ -1,5 +1,5 @@
 import React from 'react'
-import { Typography, Box } from '@mui/material'
+import { Box, Container, Typography } from '@mui/material'
 import DynamicFormIcon from '@mui/icons-material/DynamicForm'
 
 const Header = () => (
@@ -11,10 +11,12 @@ const Header = () => (
       color: 'var(--color-white)'
     }}
   >
-    <Typography variant="h2" sx={{ display: 'flex', alignItems: 'center' }}>
-      <DynamicFormIcon sx={{ fontSize: 40, marginRight: '1rem' }} />
-      Speranza Forms
-    </Typography>
+    <Container maxWidth="xl">
+      <Typography variant="h2" sx={{ display: 'flex', alignItems: 'center' }}>
+        <DynamicFormIcon sx={{ fontSize: 40, marginRight: '1rem' }} />
+        Speranza Forms
+      </Typography>
+    </Container>
   </Box>
 )
 
