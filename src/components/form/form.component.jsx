@@ -42,12 +42,15 @@ const Form = () => {
     <Box
       sx={{
         marginTop: '4rem',
+        padding: '2rem 3rem',
         gridColumn: 'span 3',
         width: '100%',
         justifySelf: 'center',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor: 'var(--color-white)',
+        borderRadius: '1rem'
       }}
     >
       <Typography variant="h3" component="div">
@@ -64,7 +67,7 @@ const Form = () => {
             return (
               <>
                 <FormControl component="fieldset" sx={{ marginTop: '1.6rem', alignSelf: 'flex-start' }}>
-                  <FormLabel component="legend">{label}</FormLabel>
+                  <FormLabel component="legend" sx={{ fontSize: '1.6rem' }}>{label}</FormLabel>
                   {renderAs === 'checkbox' ? (
                     <FormGroup row>
                       {optionSet.options.map((option) => (
