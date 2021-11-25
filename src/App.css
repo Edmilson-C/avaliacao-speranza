@@ -1,5 +1,5 @@
 .App {
-  height: 100vh;
-  background-color: #fbfbfb;
-  background-image: url("https://www.transparenttextures.com/patterns/climpek.png");
+  min-height: 100vh;
+  background-color: var(--color-secondary);
+  padding-bottom: 1.6rem;
 }
