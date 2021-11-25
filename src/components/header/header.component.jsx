@@ -7,8 +7,8 @@ const Header = () => (
     sx={{
       width: '100%',
       padding: '2rem',
-      backgroundColor: '#C36A2D',
-      color: '#FBFBFB'
+      backgroundColor: 'var(--color-primary)',
+      color: 'var(--color-white)'
     }}
   >
     <Typography variant="h2" sx={{ display: 'flex', alignItems: 'center' }}>
